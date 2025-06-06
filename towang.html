@@ -17,18 +17,16 @@
             background: linear-gradient(135deg, #2c3e50, #1a2a3a);
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
         
         .container {
             width: 100%;
             max-width: 480px;
-            margin: 0 auto;
+            margin: 20px auto;
             position: relative;
             z-index: 10;
         }
@@ -235,6 +233,40 @@
         .light:nth-child(2) { top: 30%; right: 25%; }
         .light:nth-child(3) { bottom: 25%; left: 22%; }
         .light:nth-child(4) { bottom: 15%; right: 18%; }
+        
+        /* 移动端优化 */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                margin: 10px auto;
+            }
+            
+            .title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .honoree {
+                font-size: 1.5rem;
+                padding: 6px 20px;
+            }
+            
+            .invite-text {
+                font-size: 1.1rem;
+            }
+            
+            .detail-content {
+                font-size: 1rem;
+            }
+            
+            .map-btn {
+                font-size: 1.1rem;
+                padding: 12px 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -258,7 +290,7 @@
         <div class="card">
             <div class="header">
                 <div class="title">学术交流晚宴</div>
-                <div class="honoree">王珂萌 博士师兄</div>
+                <div class="honoree">王珂萌 师兄</div>
             </div>
             
             <p class="invite-text">
