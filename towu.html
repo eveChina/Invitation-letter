@@ -12,14 +12,14 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        
+      
         html {
             height: 100%;
             overflow-x: hidden;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
-        
+      
         body {
             background: linear-gradient(135deg, #d43f3f, #8b0000);
             color: #fff;
@@ -31,7 +31,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
-        
+      
         .container {
             width: 100%;
             max-width: 480px;
@@ -39,7 +39,7 @@
             position: relative;
             z-index: 10;
         }
-        
+      
         .card {
             background: linear-gradient(45deg, #d42727, #a71b1b);
             border-radius: 20px;
@@ -50,15 +50,15 @@
             border: 6px double #ffd700;
             z-index: 20;
         }
-        
+      
         .header {
             text-align: center;
             margin-bottom: 25px;
             position: relative;
         }
-        
+      
         .title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #ffd700;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
             margin-bottom: 15px;
@@ -66,7 +66,7 @@
             letter-spacing: 3px;
             position: relative;
         }
-        
+      
         .title::after {
             content: "";
             display: block;
@@ -75,9 +75,9 @@
             background: linear-gradient(to right, transparent, #ffd700, transparent);
             margin: 12px auto;
         }
-        
+      
         .teacher-name {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #fff;
             margin: 15px 0;
             text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
@@ -87,16 +87,16 @@
             border-radius: 40px;
             border: 2px solid #ffd700;
         }
-        
+      
         .invite-text {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             text-align: center;
             margin: 20px 0;
             line-height: 1.7;
             color: #fff8dc;
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
         }
-        
+      
         .details {
             background: rgba(0, 0, 0, 0.25);
             border-radius: 15px;
@@ -104,33 +104,33 @@
             margin: 20px 0;
             border: 1px solid #ffd700;
         }
-        
+      
         .detail-item {
             display: flex;
             margin: 14px 0;
             align-items: flex-start;
         }
-        
+      
         .detail-item i {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #ffd700;
             width: 40px;
             text-align: center;
             margin-top: 4px;
         }
-        
+      
         .detail-content {
             flex: 1;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: #fff;
             line-height: 1.5;
         }
-        
+      
         .detail-content strong {
             color: #ffd700;
             font-weight: bold;
         }
-        
+      
         .map-btn {
             display: block;
             width: 100%;
@@ -138,7 +138,7 @@
             padding: 14px 20px;
             background: linear-gradient(to right, #ffd700, #ffaa00);
             color: #8b0000;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             text-align: center;
             border-radius: 50px;
@@ -147,43 +147,43 @@
             transition: all 0.3s ease;
             border: 2px solid #fff;
         }
-        
+      
         .map-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             background: linear-gradient(to right, #ffaa00, #ffd700);
         }
-        
+      
         .footer {
             text-align: center;
             margin-top: 20px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #ffd700;
             font-style: italic;
         }
-        
+      
         /* 装饰元素 */
         .lantern {
             position: fixed;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #ffd700;
             text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
             animation: swing 4s ease-in-out infinite;
             z-index: 5;
             pointer-events: none;
         }
-        
+      
         .lantern:nth-child(1) { top: 5%; left: 5%; }
         .lantern:nth-child(2) { top: 5%; right: 5%; }
         .lantern:nth-child(3) { bottom: 5%; left: 7%; }
         .lantern:nth-child(4) { bottom: 5%; right: 7%; }
-        
+      
         /* 动画 */
         @keyframes swing {
             0%, 100% { transform: translateY(0) rotate(-5deg); }
             50% { transform: translateY(-8px) rotate(5deg); }
         }
-        
+      
         .gold-flake {
             position: fixed;
             background: rgba(255, 215, 0, 0.6);
@@ -193,11 +193,11 @@
             animation: fall linear infinite;
             pointer-events: none;
         }
-        
+      
         @keyframes fall {
             to { transform: translateY(100vh) rotate(360deg); }
         }
-        
+      
         .chinese-pattern {
             position: fixed;
             top: 0;
@@ -228,28 +228,28 @@
 <body>
     <!-- 背景图案 -->
     <div class="chinese-pattern"></div>
-    
+  
     <!-- 灯笼装饰 -->
     <div class="lantern">🏮</div>
     <div class="lantern">🏮</div>
     <div class="lantern">🏮</div>
     <div class="lantern">🏮</div>
-    
+  
     <!-- 金箔 -->
     <div id="gold-flakes-container"></div>
-    
+  
     <div class="container">
         <div class="card">
             <div class="header">
                 <div class="title">谢师宴</div>
                 <div class="teacher-name">武国相老师</div>
             </div>
-            
+          
             <p class="invite-text">
                 教诲如春风，师恩似海深<br>
                 诚邀您共聚，聊表感激之情
             </p>
-            
+          
             <div class="details">
                 <div class="detail-item">
                     <i class="fas fa-calendar-alt"></i>
@@ -257,21 +257,21 @@
                         <strong>时间：</strong>2025年6月11日 星期三<br>下午 17:30
                     </div>
                 </div>
-                
+              
                 <div class="detail-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="detail-content">
                         <strong>地点：</strong>船上海鲜（海崖路店）
                     </div>
                 </div>
-                
+              
                 <div class="detail-item">
                     <i class="fas fa-door-open"></i>
                     <div class="detail-content">
                         <strong>房间号：</strong>小珠山
                     </div>
                 </div>
-                
+              
                 <div class="detail-item">
                     <i class="fas fa-location-dot"></i>
                     <div class="detail-content">
@@ -279,11 +279,11 @@
                     </div>
                 </div>
             </div>
-            
+          
             <a href="https://surl.amap.com/atUtKez1ubM0" class="map-btn" target="_blank">
                 <i class="fas fa-map-location-dot"></i> 点击导航至宴会地点
             </a>
-            
+          
             <p class="footer">
                 诚挚期待您的光临！<br>
                 全体学生敬邀
@@ -296,36 +296,36 @@
         function createGoldFlakes() {
             const container = document.getElementById('gold-flakes-container');
             const flakeCount = 15;
-            
+          
             for (let i = 0; i < flakeCount; i++) {
                 const flake = document.createElement('div');
                 flake.classList.add('gold-flake');
-                
+              
                 // 随机大小 (4px - 10px)
                 const size = Math.random() * 6 + 4;
                 flake.style.width = `${size}px`;
                 flake.style.height = `${size}px`;
-                
+              
                 // 随机位置
                 flake.style.left = `${Math.random() * 100}vw`;
                 flake.style.top = `-${size}px`;
-                
+              
                 // 随机颜色 (金色调)
                 const opacity = Math.random() * 0.5 + 0.3;
                 flake.style.backgroundColor = `rgba(255, 215, 0, ${opacity})`;
-                
+              
                 // 随机动画时长 (10-18秒)
                 const duration = Math.random() * 8 + 10;
                 flake.style.animationDuration = `${duration}s`;
-                
+              
                 // 随机延迟 (0-5秒)
                 const delay = Math.random() * 5;
                 flake.style.animationDelay = `${delay}s`;
-                
+              
                 container.appendChild(flake);
             }
         }
-        
+      
         // 页面加载完成后创建金箔
         window.addEventListener('load', createGoldFlakes);
     </script>
