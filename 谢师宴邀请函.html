@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谢师宴邀请函 - 武国相老师</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+            background: linear-gradient(135deg, #8b0000, #d40000, #8b0000);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .invitation-card {
+            width: 90%;
+            max-width: 800px;
+            background: linear-gradient(45deg, #d42727, #a71b1b);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(139, 0, 0, 0.8);
+            overflow: hidden;
+            position: relative;
+            padding: 40px 30px;
+            margin: 30px auto;
+            border: 8px double #ffd700;
+            z-index: 10;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 3.8rem;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .header h1::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            margin: 15px auto;
+        }
+        
+        .teacher-name {
+            font-size: 2.2rem;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: rgba(139, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 40px;
+            border-radius: 50px;
+            border: 3px solid #ffd700;
+        }
+        
+        .invite-text {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 25px 0;
+            line-height: 1.8;
+            color: #fff8dc;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .details {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #ffd700;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin: 18px 0;
+            align-items: center;
+        }
+        
+        .detail-item i {
+            font-size: 1.8rem;
+            color: #ffd700;
+            width: 50px;
+            text-align: center;
+            margin-right: 15px;
+        }
+        
+        .detail-content {
+            flex: 1;
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .detail-content strong {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .map-btn {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 35px auto;
+            padding: 18px 25px;
+            background: linear-gradient(to right, #ffd700, #ffaa00);
+            color: #8b0000;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 3px solid #fff;
+            letter-spacing: 2px;
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #ffaa00, #ffd700);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.3rem;
+            color: #ffd700;
+            font-style: italic;
+        }
+        
+        /* 装饰元素 */
+        .decoration {
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .lantern {
+            position: absolute;
+            font-size: 3rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            animation: swing 4s ease-in-out infinite;
+        }
+        
+        .lantern:nth-child(1) { top: 5%; left: 7%; }
+        .lantern:nth-child(2) { top: 5%; right: 7%; }
+        .lantern:nth-child(3) { bottom: 5%; left: 10%; }
+        .lantern:nth-child(4) { bottom: 5%; right: 10%; }
+        
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(10px);
+            z-index: 0;
+        }
+        
+        .cloud:nth-child(1) { top: 10%; left: 5%; }
+        .cloud:nth-child(2) { top: 15%; right: 8%; }
+        .cloud:nth-child(3) { bottom: 15%; left: 8%; }
+        .cloud:nth-child(4) { bottom: 10%; right: 5%; }
+        
+        /* 动画 */
+        @keyframes swing {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        .petal {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50% 50% 0 50%;
+            transform: rotate(45deg);
+            z-index: 0;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.8rem; }
+            .teacher-name { font-size: 1.8rem; }
+            .invite-text { font-size: 1.3rem; }
+            .detail-content { font-size: 1.2rem; }
+            .map-btn { font-size: 1.3rem; padding: 15px; }
+            .lantern { font-size: 2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 { font-size: 2.2rem; letter-spacing: 4px; }
+            .teacher-name { font-size: 1.5rem; padding: 8px 25px; }
+            .detail-item i { font-size: 1.5rem; }
+            .detail-content { font-size: 1.1rem; }
+            .map-btn { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 灯笼装饰 -->
+    <div class="lantern">🏮</div>
+    <div class="lantern">🏮</div>
+    <div class="lantern">🏮</div>
+    <div class="lantern">🏮</div>
+    
+    <!-- 祥云装饰 -->
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    
+    <!-- 花瓣 -->
+    <div id="petals-container"></div>
+    
+    <!-- 邀请函卡片 -->
+    <div class="invitation-card">
+        <div class="header">
+            <h1>谢师宴</h1>
+            <div class="teacher-name">武国相老师</div>
+        </div>
+        
+        <p class="invite-text">
+            教诲如春风，师恩似海深<br>
+            桃李满天下，春晖遍四方<br>
+            诚邀您共聚，聊表感激之情
+        </p>
+        
+        <div class="details">
+            <div class="detail-item">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="detail-content">
+                    <strong>时间：</strong>2025年6月11日 星期三 下午 17:30
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="detail-content">
+                    <strong>地点：</strong>船上海鲜（海崖路店）
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <i class="fas fa-door-open"></i>
+                <div class="detail-content">
+                    <strong>房间号：</strong>小珠山
+                </div>
+            </div>
+            
+            <div class="detail-item">
+                <i class="fas fa-location-dot"></i>
+                <div class="detail-content">
+                    <strong>地址：</strong>黄岛区三沙路与海崖路交叉口东100米
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://surl.amap.com/atUtKez1ubM0" class="map-btn" target="_blank">
+            <i class="fas fa-map-location-dot"></i> 点击导航至宴会地点
+        </a>
+        
+        <p class="footer">
+            诚挚期待您的光临！<br>
+            全体学生敬邀
+        </p>
+    </div>
+
+    <script>
+        // 创建花瓣飘落效果
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 25;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // 随机大小 (5px - 15px)
+                const size = Math.random() * 10 + 5;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // 随机位置
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.top = `-${size}px`;
+                
+                // 随机颜色 (金色调)
+                const opacity = Math.random() * 0.5 + 0.3;
+                petal.style.backgroundColor = `rgba(255, 215, 0, ${opacity})`;
+                
+                // 随机动画时长 (8-15秒)
+                const duration = Math.random() * 7 + 8;
+                petal.style.animationDuration = `${duration}s`;
+                
+                // 随机延迟 (0-5秒)
+                const delay = Math.random() * 5;
+                petal.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(petal);
+            }
+        }
+        
+        // 页面加载完成后创建花瓣
+        window.addEventListener('load', createPetals);
+    </script>
+</body>
+</html>
