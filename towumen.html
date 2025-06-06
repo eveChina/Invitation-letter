@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课题组毕业聚餐邀请函</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a6dcc, #0c4a8f);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card {
+            background: linear-gradient(45deg, #2a75c9, #1a5aa3);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            padding: 30px 25px;
+            border: 6px double #ffd700;
+            z-index: 20;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        .title::after {
+            content: "";
+            display: block;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            margin: 12px auto;
+        }
+        
+        .group-name {
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 15px 0;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            background: rgba(26, 93, 204, 0.5);
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 40px;
+            border: 2px solid #ffd700;
+        }
+        
+        .invite-text {
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.7;
+            color: #e6f7ff;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .details {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffd700;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin: 14px 0;
+            align-items: flex-start;
+        }
+        
+        .detail-item i {
+            font-size: 1.4rem;
+            color: #ffd700;
+            width: 40px;
+            text-align: center;
+            margin-top: 4px;
+        }
+        
+        .detail-content {
+            flex: 1;
+            font-size: 1.15rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+        
+        .detail-content strong {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .map-btn {
+            display: block;
+            width: 100%;
+            margin: 25px auto;
+            padding: 14px 20px;
+            background: linear-gradient(to right, #ffd700, #ffaa00);
+            color: #0c4a8f;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #ffaa00, #ffd700);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-style: italic;
+        }
+        
+        /* 装饰元素 */
+        .decoration {
+            position: absolute;
+            z-index: 5;
+        }
+        
+        .star {
+            position: absolute;
+            color: #ffd700;
+            font-size: 1.8rem;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        .star:nth-child(1) { top: 5%; left: 8%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 12%; right: 10%; animation-delay: 0.5s; }
+        .star:nth-child(3) { bottom: 15%; left: 12%; animation-delay: 1s; }
+        .star:nth-child(4) { bottom: 8%; right: 8%; animation-delay: 1.5s; }
+        
+        /* 动画 */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .academic-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 8rem;
+            z-index: 0;
+        }
+        
+        .academic-icon:nth-child(1) { 
+            top: -20px; 
+            left: -20px; 
+            transform: rotate(-15deg);
+        }
+        
+        .academic-icon:nth-child(2) { 
+            bottom: -30px; 
+            right: -20px; 
+            transform: rotate(15deg);
+        }
+        
+        .gold-flake {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50% 50% 0 50%;
+            transform: rotate(45deg);
+            z-index: 0;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 学术图标装饰 -->
+    <i class="academic-icon fas fa-graduation-cap"></i>
+    <i class="academic-icon fas fa-flask"></i>
+    
+    <!-- 星星装饰 -->
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    <div class="star">✦</div>
+    
+    <!-- 金箔 -->
+    <div id="gold-flakes-container"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="title">课题组毕业聚餐</div>
+                <div class="group-name">诚邀课题组全体成员</div>
+            </div>
+            
+            <p class="invite-text">
+                同窗数载求知路，课题组中情谊深<br>
+                今朝毕业离别时，共聚一堂话前程
+            </p>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="detail-content">
+                        <strong>时间：</strong>2025年6月11日 星期三<br>下午 17:30
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="detail-content">
+                        <strong>地点：</strong>船上海鲜（海崖路店）
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-door-open"></i>
+                    <div class="detail-content">
+                        <strong>房间号：</strong>小珠山
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-location-dot"></i>
+                    <div class="detail-content">
+                        <strong>地址：</strong>黄岛区三沙路与海崖路交叉口东100米
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://surl.amap.com/atUtKez1ubM0" class="map-btn" target="_blank">
+                <i class="fas fa-map-location-dot"></i> 点击导航至聚餐地点
+            </a>
+            
+            <p class="footer">
+                期待与您共度美好时光！<br>
+                毕业学生敬邀
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 创建金箔飘落效果
+        function createGoldFlakes() {
+            const container = document.getElementById('gold-flakes-container');
+            const flakeCount = 15;
+            
+            for (let i = 0; i < flakeCount; i++) {
+                const flake = document.createElement('div');
+                flake.classList.add('gold-flake');
+                
+                // 随机大小 (4px - 10px)
+                const size = Math.random() * 6 + 4;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                
+                // 随机位置
+                flake.style.left = `${Math.random() * 100}vw`;
+                flake.style.top = `-${size}px`;
+                
+                // 随机颜色 (金色调)
+                const opacity = Math.random() * 0.5 + 0.3;
+                flake.style.backgroundColor = `rgba(255, 215, 0, ${opacity})`;
+                
+                // 随机动画时长 (10-18秒)
+                const duration = Math.random() * 8 + 10;
+                flake.style.animationDuration = `${duration}s`;
+                
+                // 随机延迟 (0-5秒)
+                const delay = Math.random() * 5;
+                flake.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(flake);
+            }
+        }
+        
+        // 页面加载完成后创建金箔
+        window.addEventListener('load', createGoldFlakes);
+    </script>
+</body>
+</html>
