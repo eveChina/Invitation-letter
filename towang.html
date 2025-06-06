@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术交流晚宴邀请函</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50, #1a2a3a);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            padding: 30px 25px;
+            border: 6px double #f1c40f;
+            z-index: 20;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            color: #f1c40f;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.7);
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        .title::after {
+            content: "";
+            display: block;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #f1c40f, transparent);
+            margin: 12px auto;
+        }
+        
+        .honoree {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 15px 0;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            background: rgba(41, 128, 185, 0.6);
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 40px;
+            border: 2px solid #f1c40f;
+        }
+        
+        .invite-text {
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.7;
+            color: #ecf0f1;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .details {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #f1c40f;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin: 14px 0;
+            align-items: flex-start;
+        }
+        
+        .detail-item i {
+            font-size: 1.4rem;
+            color: #f1c40f;
+            width: 40px;
+            text-align: center;
+            margin-top: 4px;
+        }
+        
+        .detail-content {
+            flex: 1;
+            font-size: 1.15rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+        
+        .detail-content strong {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+        
+        .map-btn {
+            display: block;
+            width: 100%;
+            margin: 25px auto;
+            padding: 14px 20px;
+            background: linear-gradient(to right, #f1c40f, #e67e22);
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+        }
+        
+        .map-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #e67e22, #f1c40f);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #f1c40f;
+            font-style: italic;
+        }
+        
+        /* 装饰元素 */
+        .decoration {
+            position: absolute;
+            z-index: 5;
+        }
+        
+        .atom {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(241, 196, 15, 0.6);
+            border-radius: 50%;
+            z-index: 5;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .atom::before, .atom::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(241, 196, 15, 0.4);
+            border-radius: 50%;
+            transform: rotate(60deg);
+        }
+        
+        .atom::after {
+            transform: rotate(-60deg);
+        }
+        
+        .atom:nth-child(1) { top: 5%; left: 8%; animation-delay: 0s; }
+        .atom:nth-child(2) { top: 12%; right: 10%; animation-delay: 0.5s; }
+        .atom:nth-child(3) { bottom: 15%; left: 12%; animation-delay: 1s; }
+        .atom:nth-child(4) { bottom: 8%; right: 8%; animation-delay: 1.5s; }
+        
+        /* 动画 */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .academic-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 8rem;
+            z-index: 0;
+        }
+        
+        .academic-icon:nth-child(1) { 
+            top: -20px; 
+            left: -20px; 
+            transform: rotate(-15deg);
+        }
+        
+        .academic-icon:nth-child(2) { 
+            bottom: -30px; 
+            right: -20px; 
+            transform: rotate(15deg);
+        }
+        
+        .light {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(241, 196, 15, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px rgba(241, 196, 15, 0.8);
+            z-index: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .light:nth-child(1) { top: 15%; left: 20%; }
+        .light:nth-child(2) { top: 30%; right: 25%; }
+        .light:nth-child(3) { bottom: 25%; left: 22%; }
+        .light:nth-child(4) { bottom: 15%; right: 18%; }
+    </style>
+</head>
+<body>
+    <!-- 学术图标装饰 -->
+    <i class="academic-icon fas fa-book"></i>
+    <i class="academic-icon fas fa-microscope"></i>
+    
+    <!-- 原子装饰 -->
+    <div class="atom"></div>
+    <div class="atom"></div>
+    <div class="atom"></div>
+    <div class="atom"></div>
+    
+    <!-- 光点装饰 -->
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="title">学术交流晚宴</div>
+                <div class="honoree">王珂萌 博士师兄</div>
+            </div>
+            
+            <p class="invite-text">
+                承蒙师兄多指点，学术路上引航灯<br>
+                诚邀共聚话科研，同门情谊永长存
+            </p>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="detail-content">
+                        <strong>时间：</strong>2025年6月11日 星期三<br>下午 17:30
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="detail-content">
+                        <strong>地点：</strong>船上海鲜（海崖路店）
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-door-open"></i>
+                    <div class="detail-content">
+                        <strong>房间号：</strong>小珠山
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-location-dot"></i>
+                    <div class="detail-content">
+                        <strong>地址：</strong>黄岛区三沙路与海崖路交叉口东100米
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://surl.amap.com/atUtKez1ubM0" class="map-btn" target="_blank">
+                <i class="fas fa-map-location-dot"></i> 点击导航至晚宴地点
+            </a>
+            
+            <p class="footer">
+                期待与师兄共度美好时光！<br>
+                课题组全体成员敬邀
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 创建更多光点
+        function createLights() {
+            const container = document.body;
+            const lightCount = 12;
+            
+            for (let i = 0; i < lightCount; i++) {
+                const light = document.createElement('div');
+                light.classList.add('light');
+                
+                // 随机位置
+                light.style.top = `${Math.random() * 100}%`;
+                light.style.left = `${Math.random() * 100}%`;
+                
+                // 随机大小
+                const size = Math.random() * 8 + 4;
+                light.style.width = `${size}px`;
+                light.style.height = `${size}px`;
+                
+                // 随机动画延迟
+                const delay = Math.random() * 2;
+                light.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(light);
+            }
+        }
+        
+        // 页面加载完成后创建光点
+        window.addEventListener('load', createLights);
+    </script>
+</body>
+</html>
