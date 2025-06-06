@@ -224,12 +224,43 @@
     </style>
 </head>
 <body>
-    <!-- 灯笼装饰 -->
-    <div class="lantern">🏮</div>
-    <div class="lantern">🏮</div>
-    <div class="lantern">🏮</div>
-    <div class="lantern">🏮</div>
-    
+    <!-- 在body样式中修改overflow设置 -->
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+            background: linear-gradient(135deg, #8b0000, #d40000, #8b0000);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;  /* 修改为auto允许滚动 */
+            position: relative;
+        }
+
+        /* 新增滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 4px;
+        }
+
+        /* 在html元素添加平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- 原有body内容保持不变... -->
+
+    <!-- 在页面底部添加高度撑开内容 -->
+    <div style="height: 100vh"></div>
+</body>
     <!-- 祥云装饰 -->
     <div class="cloud"></div>
     <div class="cloud"></div>
